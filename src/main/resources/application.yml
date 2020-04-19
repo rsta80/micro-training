@@ -1,0 +1,51 @@
+# Base path
+server:
+  port: 8080
+  servlet:
+    context-path: /micro-training-v1
+
+# Artifact name and version
+app:
+  name: @project.name@
+  version: @project.version@
+
+
+# Spring logging level
+logging:
+  level:
+    org:
+      springframework: info
+
+
+# Set not to show null values, security, and basename for internationalization files
+spring:
+  jackson:
+    default-property-inclusion: non_null
+  security:
+    user:
+      name: user
+      password: aa1f2fb3-d969-4f3d-8b76-f314cc27422f
+      roles: user
+  messages:
+    basename: lang
+  jpa:
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+
+# Openapi info, web paths, and default type content
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui-custom.html
+  default-produces-media-type: application/json, application/xml
+  default-consumes-media-type: application/json, application/
+
+# Monitoring and actuator info
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
