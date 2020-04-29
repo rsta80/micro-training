@@ -24,7 +24,7 @@ public class Post {
     private String post;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Getter(onMethod_=@JsonIgnore)
+    @Getter(onMethod_ = @JsonIgnore)
     private User user;
 
 }

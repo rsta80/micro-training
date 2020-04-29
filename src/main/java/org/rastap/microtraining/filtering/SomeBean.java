@@ -22,7 +22,7 @@ public class SomeBean {
 
     private String field1;
     private String field2;
-    @Getter(onMethod_=@JsonIgnore)
+    @Getter(onMethod_ = @JsonIgnore)
     private String field3;
 
 }

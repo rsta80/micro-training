@@ -13,23 +13,23 @@ import java.util.List;
 /**
  * Controller implement in order to see how works static and dynamic filtering
  * Static like JsonIgnore annotation
- *
+ * <p>
  * Dynamic filtering using Jackson libs in controller
- *
+ * <p>
  * A simple approach could be Java8 Stream filtering for lists
- *
  */
 @RestController
 public class FilteringController {
 
     /**
      * Using Jackson dynamic filtering
+     *
      * @return object mapping applying filtering property, provider and Jackson mapping for the object
      */
     @GetMapping("/filtering")
-    public MappingJacksonValue retrieveSomeBean(){
+    public MappingJacksonValue retrieveSomeBean() {
 
-        SomeBean bean = new SomeBean("Value1","Value2","Value3");
+        SomeBean bean = new SomeBean("Value1", "Value2", "Value3");
         SimpleBeanPropertyFilter filterProperty = SimpleBeanPropertyFilter.filterOutAllExcept("field1");
         FilterProvider filters = new SimpleFilterProvider().addFilter("SomeBean", filterProperty);
         MappingJacksonValue mapping = new MappingJacksonValue(bean);
@@ -40,8 +40,8 @@ public class FilteringController {
     }
 
     @GetMapping("/filtering-list")
-    public List<SomeBean> retrieveListBean(){
-        return Arrays.asList(new SomeBean("Value11","Value21","Value31"), new SomeBean("Value21","Value22","Value32"));
+    public List<SomeBean> retrieveListBean() {
+        return Arrays.asList(new SomeBean("Value11", "Value21", "Value31"), new SomeBean("Value21", "Value22", "Value32"));
     }
 
 }

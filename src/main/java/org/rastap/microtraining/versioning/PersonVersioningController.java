@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Controller implemented to show different uses of versioning and how it call be called
- *
+ * <p>
  * There are 4 common options to accept versioning or content negotiation, the first 2 options are perfect for a browser call
  * the other two are useful for example to expose clean content services, for example in Postman, but a browser can't send
  * headers in its call, finally the API documentation will be more difficult to write for header or produces, because
@@ -26,7 +26,8 @@ public class PersonVersioningController {
         return ResponseEntity.ok(new PersonV2(new Name("Pepito", "Grillo")));
     }
 
-    /** Other version for verioning Oject person through params
+    /**
+     * Other version for verioning Oject person through params
      * /person/param?version=1
      *
      * @return person
@@ -36,7 +37,8 @@ public class PersonVersioningController {
         return ResponseEntity.ok(new PersonV1("Bub Espuma"));
     }
 
-    /** Other version for verioning Oject person
+    /**
+     * Other version for verioning Oject person
      * /person/param?version=2
      *
      * @return person
@@ -46,7 +48,8 @@ public class PersonVersioningController {
         return ResponseEntity.ok(new PersonV2(new Name("Bub", "Espuma")));
     }
 
-    /** Other version for verioning Oject person through header
+    /**
+     * Other version for verioning Oject person through header
      * /person/header
      * Headers option: X-API-VERSION=1
      *
@@ -57,7 +60,8 @@ public class PersonVersioningController {
         return ResponseEntity.ok(new PersonV1("Bub Espuma"));
     }
 
-    /** Other version for verioning Oject person
+    /**
+     * Other version for verioning Oject person
      * /person/header
      * Headers option: X-API-VERSION=1
      *
@@ -68,7 +72,8 @@ public class PersonVersioningController {
         return ResponseEntity.ok(new PersonV2(new Name("Bub", "Espuma")));
     }
 
-    /** Other version for versioning Object person through produces
+    /**
+     * Other version for versioning Object person through produces
      * /person/produces
      * In Headers: Accept - application/org.arst80.appv1+json
      *
@@ -79,7 +84,8 @@ public class PersonVersioningController {
         return ResponseEntity.ok(new PersonV1("Bub Espuma"));
     }
 
-    /** Other version for versioning Object person
+    /**
+     * Other version for versioning Object person
      * /person/produces
      * In Headers: Accpet - application/org.arst80.appv2+json
      *

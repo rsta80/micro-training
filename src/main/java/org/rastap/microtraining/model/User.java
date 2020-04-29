@@ -33,7 +33,7 @@ public class User {
     private String name;
 
     @NotNull(message = "The date must not be empty")
-    @JsonFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
 
     @OneToMany(mappedBy = "user")

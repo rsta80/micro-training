@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class IsAliveDto {
 
-    public IsAliveDto(String message){
+    public IsAliveDto(String message) {
         this.message = message;
     }
 

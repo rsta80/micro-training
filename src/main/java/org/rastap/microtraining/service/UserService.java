@@ -8,19 +8,19 @@ import java.util.Optional;
 
 public interface UserService {
 
-     List<User> findAll();
+    List<User> findAll();
 
-     Optional<User> findById(Integer id);
+    Optional<User> findById(Integer id);
 
-     User save(User u);
+    User save(User u);
 
-     List<User> update(User newU);
+    List<User> update(User newU);
 
-     void delete(User u);
+    void delete(User u);
 
-     Post savePost(User u, Post p);
+    Post savePost(User u, Post p);
 
-     Optional<Post> findPostById(User u, Integer id);
+    Optional<Post> findPostById(User u, Integer id);
 
 
 }

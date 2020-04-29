@@ -24,14 +24,14 @@ public class CustomizedExceptionHandler extends ResponseEntityExceptionHandler {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public final ResponseEntity<?> allExceptionHandler(Exception ex, WebRequest request) {
         log.error("General exception: " + ex.getMessage());
-        return new ResponseEntity<>(error(ex,500,request.getDescription(false)), HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(error(ex, 500, request.getDescription(false)), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @ExceptionHandler(ObjectNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ResponseEntity<ExceptionDto> notFoundException(Exception ex, WebRequest request) {
         log.error("Not found exception: " + ex.getMessage());
-        return new ResponseEntity<>(error(ex,404,request.getDescription(false)), HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(error(ex, 404, request.getDescription(false)), HttpStatus.NOT_FOUND);
     }
 
     @Override
@@ -45,12 +45,12 @@ public class CustomizedExceptionHandler extends ResponseEntityExceptionHandler {
                 .map(DefaultMessageSourceResolvable::getDefaultMessage)
                 .collect(Collectors.toList());
 
-        return new ResponseEntity<>(this.error(ex,status.value(),errors.toString()), headers, status);
+        return new ResponseEntity<>(this.error(ex, status.value(), errors.toString()), headers, status);
 
     }
 
-    private ExceptionDto error(Exception e, int code, String details){
-        return new ExceptionDto(Instant.now(),code,e.getMessage(),details);
+    private ExceptionDto error(Exception e, int code, String details) {
+        return new ExceptionDto(Instant.now(), code, e.getMessage(), details);
     }
 
 }

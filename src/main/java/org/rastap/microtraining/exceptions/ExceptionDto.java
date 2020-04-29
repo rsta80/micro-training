@@ -17,4 +17,4 @@ public class ExceptionDto {
     private String errorMsg;
     private String details;
 
-    }
+}

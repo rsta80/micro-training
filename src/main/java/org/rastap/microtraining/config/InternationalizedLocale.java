@@ -11,7 +11,7 @@ import java.util.Locale;
 public class InternationalizedLocale {
 
     @Bean
-    public LocaleResolver localResolver(){
+    public LocaleResolver localResolver() {
         AcceptHeaderLocaleResolver localeResolver = new AcceptHeaderLocaleResolver();
         localeResolver.setDefaultLocale(Locale.US);
 
